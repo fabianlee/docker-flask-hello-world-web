@@ -1,9 +1,9 @@
 # Summary
-Golang http web server running by default on port 8080 that is intended for testing
+Pyton flask web server running by default on port 8000 that is intended for testing containers, especially from Kubernetes
 
 # Environment variables
 
-* PORT - listen port, defaults to 8080
+* PORT - listen port, defaults to 8000
 * APP_CONTEXT - base context path of app, defaults to '/'
 
 # Environment variables populated from Downward API
