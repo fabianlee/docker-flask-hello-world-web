@@ -1,6 +1,8 @@
 # Summary
 Python flask web server running by default on port 8000 that is intended for testing containers, especially from Kubernetes
 
+Image is based on python:3.9-slim-buster and is ~130Mb
+
 # Environment variables
 
 * PORT - listen port, defaults to 8000
