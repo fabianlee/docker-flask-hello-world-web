@@ -1,5 +1,5 @@
 # Summary
-Pyton flask web server running by default on port 8000 that is intended for testing containers, especially from Kubernetes
+Python flask web server running by default on port 8000 that is intended for testing containers, especially from Kubernetes
 
 # Environment variables
 
