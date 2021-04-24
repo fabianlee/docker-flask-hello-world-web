@@ -60,7 +60,7 @@ def health():
 
 if __name__ == '__main__' or __name__ == "main":
 
-    debugVal = bool(os.getenv("DEBUG",True))
+    debugVal = bool(os.getenv("DEBUG",False))
     # avoids error with jsonify that checks request.is_xhr
     # https://github.com/pallets/flask/issues/2549
     app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
