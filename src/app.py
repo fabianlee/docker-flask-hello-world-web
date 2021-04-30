@@ -14,7 +14,7 @@ log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 app = Flask(__name__)
 
-# version and build string placed into env by Docker ENV
+# hello message default noun
 message_to = "World"
 
 # global request counter
@@ -52,7 +52,7 @@ def entry_point(upath):
 def health():
     """ kubernetes health endpoint """
     return jsonify(
-        { 'health':'ok','Version':version_str, 'BuildTime':buildtime_str }
+        { 'health':'ok' }
     )
 
 if __name__ == '__main__' or __name__ == "main":
@@ -71,6 +71,6 @@ if __name__ == '__main__' or __name__ == "main":
     message_to = os.getenv("MESSAGE_TO","World")
     print("message_to: {}".format(message_to))
 
-    app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port)
 
 

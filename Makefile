@@ -14,8 +14,8 @@ MY_GITREF := $(shell git rev-parse --short HEAD)
 
 ## builds docker image
 docker-build:
-	echo MY_GITREF is $(MY_GITREF)
-	$(DOCKERCMD) build --build-arg MY_VERSION=$(VERSION) --build-arg MY_BUILDTIME=$(BUILD_TIME) -f Dockerfile -t $(OPV) .
+	@echo MY_GITREF is $(MY_GITREF)
+	$(DOCKERCMD) build -f Dockerfile -t $(OPV) .
 
 ## cleans docker image
 clean:
@@ -23,7 +23,7 @@ clean:
 
 ## runs container in foreground, testing a couple of override values
 docker-test-fg:
-	$(DOCKERCMD) run -it -p $(WEBPORT) -e APP_CONTEXT=/hello/ -e MY_NODE_NAME=node1 --rm $(OPV)
+	$(DOCKERCMD) run -it -p $(WEBPORT) -e APP_CONTEXT=/flask-hello/ --rm $(OPV)
 
 ## runs container in foreground, override entrypoint to use use shell
 docker-test-cli:
