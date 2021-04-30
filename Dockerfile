@@ -40,14 +40,6 @@ CMD [ "python", "app.py" ]
 #
 FROM python:3.9-slim-buster
 
-# accept override of value from --build-args
-ARG MY_VERSION 0.1.1
-ENV MY_VERSION=$MY_VERSION
-
-# accept override of value from --build-args
-ARG MY_BUILDTIME now
-ENV MY_BUILDTIME=$MY_BUILDTIME
-
 # Extra python env
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
