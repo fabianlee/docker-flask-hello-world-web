@@ -45,8 +45,13 @@ docker-logs:
 docker-stop:
 	$(DOCKERCMD) stop $(PROJECT)
 
-
 ## pushes to $(DOCKERCMD)hub
 docker-push:
 	$(DOCKERCMD) push $(OPV)
 
+## pushes to kubernetes cluster
+k8s-apply:
+	sed -e 's/1.0.0/$(VERSION)/' flask-hello-world-web.yaml | kubectl apply -f -
+
+k8s-delete:
+	kubectl delete -f flask-hello-world-web.yaml 
